@@ -174,8 +174,41 @@
     font-size: 1.25rem;
   }
 }
+    <style>
+  .gallery-img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
 
-  </style>
+  .gallery-img:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 576px) {
+    .gallery-img {
+      width: 100%;
+      height: auto;
+    }
+  }
+    
+  .gallery-img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .gallery-img:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 576px) {
+    .gallery-img {
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>
 </head>
 <body>
 
