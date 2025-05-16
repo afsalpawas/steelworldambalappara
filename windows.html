@@ -4,171 +4,194 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Steel Windows Gallery</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    body {
+      scroll-behavior: smooth;
+    }
+
+    /* Logo: open/close window */
+    .window-logo {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      margin-right: 10px;
+    }
+    .window-logo::before, .window-logo::after {
+      content: "";
+      position: absolute;
+      border: 2px solid white;
+    }
+    .window-logo::before {
+      width: 45%;
+      height: 100%;
+      left: 0;
+    }
+    .window-logo::after {
+      width: 45%;
+      height: 100%;
+      right: 0;
+    }
+
     .title-overlay {
       position: absolute;
       bottom: 0;
       background: rgba(0, 0, 0, 0.6);
-      color: white;
+      color: #fff;
       width: 100%;
+      padding: 5px;
       text-align: center;
-      padding: 0.4rem;
-      font-weight: 500;
+      font-size: 14px;
     }
+
     .gallery-img {
-      cursor: pointer;
-      transition: transform 0.3s ease;
+      height: 250px;
+      object-fit: cover;
     }
-    .gallery-img:hover {
-      transform: scale(1.05);
+
+    #modalImage {
+      object-fit: contain;
+      width: 100%;
+      height: 100vh;
     }
-    .nav-logo {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+
+    .section-title {
+      padding-top: 60px;
+      margin-bottom: 20px;
     }
-    .filter-input {
-      max-width: 400px;
-      margin: 10px auto;
-    }
+
     @media (max-width: 576px) {
-      .card-img-top {
-        height: 200px;
-        object-fit: cover;
+      .gallery-img {
+        height: 180px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images1/window-logo.png" class="nav-logo" alt="Logo" />
-      Steel World - Windows
-    </a>
-  </div>
-</nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <div class="window-logo"></div> Steel Windows
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#two-door">2 Door</a></li>
+          <li class="nav-item"><a class="nav-link" href="#three-door">3 Door</a></li>
+          <li class="nav-item"><a class="nav-link" href="#four-door">4 Door</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bathroom">Bathroom</a></li>
+        </ul>
+        <input type="text" class="form-control w-auto" id="productSearch" placeholder="Search products..." />
+      </div>
+    </div>
+  </nav>
 
-<!-- Section Buttons -->
-<div class="bg-secondary py-2 text-center text-white">
-  <div class="container d-flex flex-wrap justify-content-center gap-2">
-    <a href="#two-door" class="btn btn-light btn-sm">Two Door Window</a>
-    <a href="#three-door" class="btn btn-light btn-sm">Three Door Window</a>
-    <a href="#four-door" class="btn btn-light btn-sm">Four Door Window</a>
-    <a href="#bathroom" class="btn btn-light btn-sm">Bathroom Window</a>
-  </div>
-</div>
+  <!-- Section Template -->
+  <section class="py-4 bg-light">
+    <div class="container">
+      <!-- Section -->
+      <div id="two-door" class="product-section">
+        <h3 class="section-title text-center">Two Door Windows</h3>
+        <div class="row g-4 gallery">
 
-<!-- Search Bar -->
-<div class="container filter-input">
-  <input type="text" id="productSearch" class="form-control" placeholder="Search windows..." />
-</div>
+          <div class="col-12 col-sm-6 col-lg-3 filter-card" data-title="Two Door Window 1">
+            <div class="card position-relative border-0 shadow-sm">
+              <img src="images1/1938-ahlada-window-2.jpg" alt="Two Door Window 1" class="card-img-top gallery-img" 
+                   data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/1938-ahlada-window-2.jpg" />
+              <div class="title-overlay">Two Door Window 1</div>
+            </div>
+          </div>
 
-<!-- Gallery Section -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Steel Windows Gallery</h2>
+          <!-- Add more two door images here -->
 
-    <!-- Two Door -->
-    <h4 id="two-door" class="mb-3 mt-4">Two Door Window</h4>
-    <div class="row g-4">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Two Door Window 1">
-        <div class="card position-relative">
-          <img src="images1/window2-1.jpg" class="card-img-top gallery-img" alt="Two Door Window 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/window2-1.jpg" />
-          <div class="title-overlay">Two Door Window 1</div>
         </div>
       </div>
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Two Door Window 2">
-        <div class="card position-relative">
-          <img src="images1/window2-2.jpg" class="card-img-top gallery-img" alt="Two Door Window 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/window2-2.jpg" />
-          <div class="title-overlay">Two Door Window 2</div>
+
+      <!-- 3 Door -->
+      <div id="three-door" class="product-section mt-5">
+        <h3 class="section-title text-center">Three Door Windows</h3>
+        <div class="row g-4 gallery">
+
+          <div class="col-12 col-sm-6 col-lg-3 filter-card" data-title="Three Door Window 1">
+            <div class="card position-relative border-0 shadow-sm">
+              <img src="images1/Tata-Pravesh-Coral-Oyster-Windows-Forest-Brown-3.jpg" alt="Three Door Window 1" class="card-img-top gallery-img" 
+                   data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/Tata-Pravesh-Coral-Oyster-Windows-Forest-Brown-3.jpg" />
+              <div class="title-overlay">Three Door Window 1</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4 Door -->
+      <div id="four-door" class="product-section mt-5">
+        <h3 class="section-title text-center">Four Door Windows</h3>
+        <div class="row g-4 gallery">
+
+          <div class="col-12 col-sm-6 col-lg-3 filter-card" data-title="Four Door Window 1">
+            <div class="card position-relative border-0 shadow-sm">
+              <img src="images/steel-window-4.jpg" alt="Four Door Window 1" class="card-img-top gallery-img" 
+                   data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images/steel-window-4.jpg" />
+              <div class="title-overlay">Four Door Window 1</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bathroom -->
+      <div id="bathroom" class="product-section mt-5">
+        <h3 class="section-title text-center">Bathroom Windows</h3>
+        <div class="row g-4 gallery">
+
+          <div class="col-12 col-sm-6 col-lg-3 filter-card" data-title="Bathroom Window 1">
+            <div class="card position-relative border-0 shadow-sm">
+              <img src="images1/white-21-x-14-x-21-mm-size-3-kg-mild-steel-window-069.jpg" alt="Bathroom Window 1" class="card-img-top gallery-img" 
+                   data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/white-21-x-14-x-21-mm-size-3-kg-mild-steel-window-069.jpg" />
+              <div class="title-overlay">Bathroom Window 1</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Three Door -->
-    <h4 id="three-door" class="mb-3 mt-5">Three Door Window</h4>
-    <div class="row g-4">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Three Door Window 1">
-        <div class="card position-relative">
-          <img src="images1/window3-1.jpg" class="card-img-top gallery-img" alt="Three Door Window 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/window3-1.jpg" />
-          <div class="title-overlay">Three Door Window 1</div>
+  <!-- Fullscreen Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content bg-dark border-0">
+        <div class="modal-body d-flex justify-content-center align-items-center">
+          <img id="modalImage" src="" alt="Fullscreen" />
         </div>
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Three Door Window 2">
-        <div class="card position-relative">
-          <img src="images1/window3-2.jpg" class="card-img-top gallery-img" alt="Three Door Window 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/window3-2.jpg" />
-          <div class="title-overlay">Three Door Window 2</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Four Door -->
-    <h4 id="four-door" class="mb-3 mt-5">Four Door Window</h4>
-    <div class="row g-4">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Four Door Window 1">
-        <div class="card position-relative">
-          <img src="images1/window4-1.jpg" class="card-img-top gallery-img" alt="Four Door Window 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/window4-1.jpg" />
-          <div class="title-overlay">Four Door Window 1</div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Four Door Window 2">
-        <div class="card position-relative">
-          <img src="images1/window4-2.jpg" class="card-img-top gallery-img" alt="Four Door Window 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/window4-2.jpg" />
-          <div class="title-overlay">Four Door Window 2</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bathroom -->
-    <h4 id="bathroom" class="mb-3 mt-5">Bathroom Window</h4>
-    <div class="row g-4">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Bathroom Window 1">
-        <div class="card position-relative">
-          <img src="images1/bath1.jpg" class="card-img-top gallery-img" alt="Bathroom Window 1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/bath1.jpg" />
-          <div class="title-overlay">Bathroom Window 1</div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Bathroom Window 2">
-        <div class="card position-relative">
-          <img src="images1/bath2.jpg" class="card-img-top gallery-img" alt="Bathroom Window 2" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images1/bath2.jpg" />
-          <div class="title-overlay">Bathroom Window 2</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Fullscreen Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-transparent border-0">
-      <img src="" class="img-fluid rounded" id="modalImage" alt="Full Image" />
     </div>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Modal image display
-  const modalImage = document.getElementById("modalImage");
-  document.querySelectorAll("[data-bs-image]").forEach((img) => {
-    img.addEventListener("click", () => {
-      modalImage.src = img.getAttribute("data-bs-image");
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // Modal image viewer
+    const modalImage = document.getElementById('modalImage');
+    document.querySelectorAll('[data-bs-image]').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImage.src = img.getAttribute('data-bs-image');
+      });
     });
-  });
 
-  // jQuery search filter
-  $('#productSearch').on('keyup', function () {
-    var value = $(this).val().toLowerCase();
-    $('.filter-card').filter(function () {
-      $(this).toggle($(this).data('title').toLowerCase().indexOf(value) > -1)
+    // jQuery search filter
+    $('#productSearch').on('keyup', function () {
+      const query = $(this).val().toLowerCase();
+      $('.filter-card').each(function () {
+        const title = $(this).data('title').toLowerCase();
+        $(this).toggle(title.includes(query));
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
