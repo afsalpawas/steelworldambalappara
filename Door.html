@@ -36,6 +36,27 @@
       bottom: 6px;
       left: 4px;
     }
+    .window-logo {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      margin-right: 10px;
+    }
+    .window-logo::before, .window-logo::after {
+      content: "";
+      position: absolute;
+      border: 2px solid white;
+    }
+    .window-logo::before {
+      width: 45%;
+      height: 100%;
+      left: 0;
+    }
+    .window-logo::after {
+      width: 45%;
+      height: 100%;
+      right: 0;
+    }
     .gallery-img {
       height: 200px;
       object-fit: cover;
@@ -62,6 +83,11 @@
     .section-title {
       font-weight: 600;
       color: #4a5568;
+      padding-top: 60px;
+      margin-bottom: 20px;
+    }
+    .product-section {
+      padding: 20px 0;
     }
   </style>
 </head>
@@ -70,8 +96,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <div class="window-logo"></div>
-      <span class="fw-bold">Steel Windows</span>
+      <div class="door-logo me-2"></div>
+      <span class="fw-bold text-white">Steel World Doors</span>
     </a>
     <span class="ms-2 text-white">Steel World</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
@@ -82,69 +108,83 @@
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="bi bi-house-door-fill"></i> Home</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#two-door">2 Door</a></li>
-        <li class="nav-item"><a class="nav-link" href="#three-door">3 Door</a></li>
-        <li class="nav-item"><a class="nav-link" href="#four-door">4 Door</a></li>
-        <li class="nav-item"><a class="nav-link" href="#bathroom">Bathroom</a></li>
+        <li class="nav-item"><a class="nav-link" href="#main-door">Main Door</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kitchen-door">Kitchen Door</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bedroom-door">Bedroom Door</a></li>
+        <li class="nav-item"><a class="nav-link" href="#balcony-door">Balcony Door</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pooja-room-door">Pooja Room Door</a></li>
       </ul>
-      <input type="text" class="form-control w-auto" id="productSearch" placeholder="Search products..." />
+      <div class="d-flex align-items-center">
+        <a href="tel:+919946178433" class="nav-link text-white me-3">
+          <i class="bi bi-telephone-fill me-1"></i> +91 99461 78433
+        </a>
+        <input type="text" class="form-control" id="productSearch" placeholder="Search doors..." />
+      </div>
     </div>
   </div>
 </nav>
 
-
-
-  <!-- Product Sections -->
-  <div id="hall-door" class="product-section mb-5">
-    <h3 class="section-title">Steel World - Hall Door</h3>
-    <div class="row g-4 gallery">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Hall Door 1">
-        <div class="card position-relative border-0 shadow-sm">
-          <img src="images2/IMG_6131-2.png" class="card-img-top gallery-img" alt="Hall Door 1"
-               data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/IMG_6131-2.png">
-          <div class="title-overlay">Hall Door 1</div>
-        </div>
+<!-- Product Sections -->
+<div id="main-door" class="product-section container">
+  <h3 class="section-title text-center">Main Doors</h3>
+  <div class="row g-4 gallery">
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Main Door 1">
+      <div class="card position-relative border-0 shadow-sm">
+        <img src="images2/IMG_6131-2.png" class="card-img-top gallery-img" alt="Main Door 1"
+             data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/IMG_6131-2.png">
+        <div class="title-overlay">Main Door 1</div>
       </div>
     </div>
+    <!-- Add more main door images here -->
   </div>
+</div>
 
-  <div id="two-door" class="product-section mb-5">
-    <h3 class="section-title">Steel World - Two Door</h3>
-    <div class="row g-4 gallery">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Two Door Steel 1">
-        <div class="card position-relative border-0 shadow-sm">
-          <img src="images2/29.jpg" class="card-img-top gallery-img" alt="Two Door Steel 1"
-               data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/29.jpg">
-          <div class="title-overlay">Two Door Steel 1</div>
-        </div>
+<div id="kitchen-door" class="product-section container">
+  <h3 class="section-title text-center">Kitchen Doors</h3>
+  <div class="row g-4 gallery">
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Kitchen Door 1">
+      <div class="card position-relative border-0 shadow-sm">
+        <img src="images2/29.jpg" class="card-img-top gallery-img" alt="Kitchen Door 1"
+             data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/29.jpg">
+        <div class="title-overlay">Kitchen Door 1</div>
       </div>
     </div>
+    <!-- Add more kitchen door images here -->
   </div>
+</div>
 
-  <div id="three-door" class="product-section mb-5">
-    <h3 class="section-title">Steel World - Three Door</h3>
-    <div class="row g-4 gallery">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Three Door Steel 1">
-        <div class="card position-relative border-0 shadow-sm">
-          <img src="images2/three-door-steel-window.jpg" class="card-img-top gallery-img" alt="Three Door Steel 1"
-               data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/three-door-steel-window.jpg">
-          <div class="title-overlay">Three Door Steel 1</div>
-        </div>
+<div id="bedroom-door" class="product-section container">
+  <h3 class="section-title text-center">Bedroom Doors</h3>
+  <div class="row g-4 gallery">
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Bedroom Door 1">
+      <div class="card position-relative border-0 shadow-sm">
+        <img src="images2/three-door-steel-window.jpg" class="card-img-top gallery-img" alt="Bedroom Door 1"
+             data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/three-door-steel-window.jpg">
+        <div class="title-overlay">Bedroom Door 1</div>
       </div>
     </div>
+    <!-- Add more bedroom door images here -->
   </div>
+</div>
 
-  <div id="four-door" class="product-section mb-5">
-    <h3 class="section-title">Steel World - Four Door</h3>
-    <div class="row g-4 gallery">
-      <div class="col-sm-6 col-lg-3 filter-card" data-title="Four Door Steel 1">
-        <div class="card position-relative border-0 shadow-sm">
-          <img src="images2/steel-window-500x500.png" class="card-img-top gallery-img" alt="Four Door Steel 1"
-               data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/steel-window-500x500.png">
-          <div class="title-overlay">Four Door Steel 1</div>
-        </div>
+<div id="balcony-door" class="product-section container">
+  <h3 class="section-title text-center">Balcony Doors</h3>
+  <div class="row g-4 gallery">
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Balcony Door 1">
+      <div class="card position-relative border-0 shadow-sm">
+        <img src="images2/steel-window-500x500.png" class="card-img-top gallery-img" alt="Balcony Door 1"
+             data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="images2/steel-window-500x500.png">
+        <div class="title-overlay">Balcony Door 1</div>
       </div>
     </div>
+    <!-- Add more balcony door images here -->
+  </div>
+</div>
+
+<div id="pooja-room-door" class="product-section container">
+  <h3 class="section-title text-center">Pooja Room Doors</h3>
+  <div class="row g-4 gallery">
+    <!-- Add pooja room door images here -->
   </div>
 </div>
 
