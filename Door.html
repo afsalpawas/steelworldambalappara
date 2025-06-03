@@ -67,32 +67,27 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg shadow-sm px-3">
-  <a class="navbar-brand d-flex align-items-center" href="index.html">
-    <div class="door-logo me-2"></div>
-    <span class="fw-bold text-white">Steel World Door</span>
-  </a>
-  <span class="ms-2 text-white">Steel World</span>
-
-  <button class="navbar-toggler text-white border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarContent">
-    <div class="ms-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3 w-100">
-      <!-- Filter Buttons -->
-      <div class="d-flex flex-wrap gap-2">
-        <button class="btn btn-outline-light btn-sm filter-btn" data-filter="hall-door">Hall Door</button>
-        <button class="btn btn-outline-light btn-sm filter-btn" data-filter="two-door">Two Door</button>
-        <button class="btn btn-outline-light btn-sm filter-btn" data-filter="three-door">Three Door</button>
-        <button class="btn btn-outline-light btn-sm filter-btn" data-filter="four-door">Four Door</button>
-      </div>
-      <!-- Search -->
-      <input type="text" id="productSearch" class="form-control form-control-sm w-100 w-lg-auto" placeholder="Search doors...">
-    </div>
-    <div class="d-flex align-items-center gap-3 ms-lg-3 mt-3 mt-lg-0">
-      <a href="index.html" class="text-white"><i class="bi bi-house-door-fill fs-5"></i></a>
-      <a href="tel:+91 99461 78433" class="text-white"><i class="bi bi-telephone-fill fs-5"></i></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <div class="window-logo"></div>
+      <span class="fw-bold">Steel Windows</span>
+    </a>
+    <span class="ms-2 text-white">Steel World</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-house-door-fill"></i> Home</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#two-door">2 Door</a></li>
+        <li class="nav-item"><a class="nav-link" href="#three-door">3 Door</a></li>
+        <li class="nav-item"><a class="nav-link" href="#four-door">4 Door</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bathroom">Bathroom</a></li>
+      </ul>
+      <input type="text" class="form-control w-auto" id="productSearch" placeholder="Search products..." />
     </div>
   </div>
 </nav>
