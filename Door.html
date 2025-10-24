@@ -162,6 +162,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      text-decoration: none;
     }
     
     .unique-btn:hover {
@@ -231,6 +232,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       z-index: 1000;
       transition: all 0.3s ease;
+      text-decoration: none;
     }
     
     .fab:hover {
@@ -255,6 +257,28 @@
     
     ::-webkit-scrollbar-thumb:hover {
       background: #2980b9;
+    }
+    
+    /* Carousel Styles */
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+    
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    
+    /* Image placeholder for missing images */
+    .img-placeholder {
+      background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -296,20 +320,47 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="container-fluid py-5 mb-4" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);">
-  <div class="container py-5 text-white text-center">
-    <h1 class="display-4 fw-bold mb-4">Premium Steel Doors & Windows</h1>
-    <p class="lead mb-5">Crafted with precision for durability and elegance</p>
-    <div class="d-flex justify-content-center gap-3">
-      <a href="#main-door" class="unique-btn">
-        <i class="bi bi-door-open"></i> Explore Doors
-      </a>
-      <a href="tel:+919946178433" class="unique-btn" style="background: var(--accent-color);">
-        <i class="bi bi-telephone-outbound"></i> Call Now
-      </a>
+<!-- Hero Section with Carousel -->
+<div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/carousel-1.jpg" class="d-block w-100" alt="Premium Steel Doors">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Premium Steel Doors</h2>
+        <p>Durable and elegant solutions for your home</p>
+        <a href="#main-door" class="unique-btn mt-3">Explore Our Collection</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/carousel-2.jpg" class="d-block w-100" alt="Custom Designs">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Custom Designs</h2>
+        <p>Tailored to match your unique style and requirements</p>
+        <a href="tel:+919946178433" class="unique-btn mt-3">Get a Quote</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/carousel-3.jpg" class="d-block w-100" alt="Quality Craftsmanship">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Quality Craftsmanship</h2>
+        <p>Built to last with precision engineering</p>
+        <a href="#contact" class="unique-btn mt-3">Contact Us</a>
+      </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <!-- Product Sections -->
@@ -323,7 +374,30 @@
         <div class="title-overlay">Main Door 1</div>
       </div>
     </div>
-    <!-- Add more main door images here -->
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Main Door 2">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Main Door 2
+        </div>
+        <div class="title-overlay">Main Door 2</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Main Door 3">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Main Door 3
+        </div>
+        <div class="title-overlay">Main Door 3</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Main Door 4">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Main Door 4
+        </div>
+        <div class="title-overlay">Main Door 4</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -337,7 +411,30 @@
         <div class="title-overlay">Kitchen Door 1</div>
       </div>
     </div>
-    <!-- Add more kitchen door images here -->
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Kitchen Door 2">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Kitchen Door 2
+        </div>
+        <div class="title-overlay">Kitchen Door 2</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Kitchen Door 3">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Kitchen Door 3
+        </div>
+        <div class="title-overlay">Kitchen Door 3</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Kitchen Door 4">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Kitchen Door 4
+        </div>
+        <div class="title-overlay">Kitchen Door 4</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -351,7 +448,30 @@
         <div class="title-overlay">Bedroom Door 1</div>
       </div>
     </div>
-    <!-- Add more bedroom door images here -->
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Bedroom Door 2">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Bedroom Door 2
+        </div>
+        <div class="title-overlay">Bedroom Door 2</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Bedroom Door 3">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Bedroom Door 3
+        </div>
+        <div class="title-overlay">Bedroom Door 3</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Bedroom Door 4">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Bedroom Door 4
+        </div>
+        <div class="title-overlay">Bedroom Door 4</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -365,14 +485,125 @@
         <div class="title-overlay">Balcony Door 1</div>
       </div>
     </div>
-    <!-- Add more balcony door images here -->
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Balcony Door 2">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Balcony Door 2
+        </div>
+        <div class="title-overlay">Balcony Door 2</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Balcony Door 3">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Balcony Door 3
+        </div>
+        <div class="title-overlay">Balcony Door 3</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Balcony Door 4">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Balcony Door 4
+        </div>
+        <div class="title-overlay">Balcony Door 4</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div id="pooja-room-door" class="product-section container">
   <h3 class="section-title text-center">Pooja Room Doors</h3>
   <div class="row g-4 gallery">
-    <!-- Add pooja room door images here -->
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Pooja Room Door 1">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Pooja Room Door 1
+        </div>
+        <div class="title-overlay">Pooja Room Door 1</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Pooja Room Door 2">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Pooja Room Door 2
+        </div>
+        <div class="title-overlay">Pooja Room Door 2</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Pooja Room Door 3">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Pooja Room Door 3
+        </div>
+        <div class="title-overlay">Pooja Room Door 3</div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3 filter-card" data-title="Pooja Room Door 4">
+      <div class="card position-relative border-0 shadow-sm">
+        <div class="card-img-top gallery-img img-placeholder">
+          Pooja Room Door 4
+        </div>
+        <div class="title-overlay">Pooja Room Door 4</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="product-section container">
+  <h3 class="section-title text-center">Contact Us</h3>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Get In Touch</h5>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn unique-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Our Location</h5>
+          <div class="mb-4">
+            <h6><i class="bi bi-geo-alt-fill me-2"></i> Address</h6>
+            <p>123 Steel Street, Door City, India</p>
+          </div>
+          <div class="mb-4">
+            <h6><i class="bi bi-telephone-fill me-2"></i> Phone</h6>
+            <p>+91 99461 78433</p>
+          </div>
+          <div class="mb-4">
+            <h6><i class="bi bi-envelope-fill me-2"></i> Email</h6>
+            <p>info@steelworlddoors.com</p>
+          </div>
+          <div class="mb-4">
+            <h6><i class="bi bi-clock-fill me-2"></i> Business Hours</h6>
+            <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+            <p>Sunday: 10:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -405,9 +636,9 @@
         <p><i class="bi bi-geo-alt-fill me-2"></i> 123 Steel Street, Door City, India</p>
         <p><i class="bi bi-telephone-fill me-2"></i> +91 99461 78433</p>
         <p><i class="bi bi-envelope-fill me-2"></i> info@steelworlddoors.com</p>
-        <button class="btn unique-btn mt-2">
+        <a href="https://wa.me/919946178433" class="btn unique-btn mt-2">
           <i class="bi bi-whatsapp"></i> WhatsApp Us
-        </button>
+        </a>
       </div>
     </div>
     <hr class="my-4 bg-secondary">
